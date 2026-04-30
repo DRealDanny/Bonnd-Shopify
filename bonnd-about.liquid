@@ -1,0 +1,117 @@
+{{ 'bonnd-about.css' | asset_url | stylesheet_tag }}
+<div class="bonnd-about-wrapper">
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <span class="eyebrow reveal">About Bonnd</span>
+    <h1 class="page-hero-title reveal d1">Why Bonnd Exists</h1>
+    <p class="page-hero-body reveal d2">Bonnd exists because too many men are sitting across from their partners feeling nothing — and blaming themselves for it. Not because they've stopped caring. Not because something is wrong with them. But because chronic stress, compounding load, and zero recovery time have quietly pushed the body into conservation mode. Desire gets cut first.</p>
+    <p class="page-hero-body reveal d3" style="margin-top:18px;">This is not a disease. It's a stress response. The body is doing exactly what it's designed to do under prolonged overload. The problem is that every supplement in this category tries to override that response — stimulate over it, push through it, ignore it. The result is a short spike followed by a deeper crash. Bonnd starts where the real problem actually lives.</p>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span>Built For Men Who Refuse To Quit</span>
+      <span aria-hidden="true">Built For Men Who Refuse To Quit</span>
+      <span aria-hidden="true">Built For Men Who Refuse To Quit</span>
+      <span aria-hidden="true">Built For Men Who Refuse To Quit</span>
+      <span aria-hidden="true">Built For Men Who Refuse To Quit</span>
+      <span aria-hidden="true">Built For Men Who Refuse To Quit</span>
+    </div>
+  </div>
+
+  <!-- OUR PERSPECTIVE -->
+  <section class="section sec-light">
+    <div class="container two-col">
+      <!-- Replaced placeholder with your Shopify image asset -->
+      <img src="{{ 'about-image.png' | file_url }}" alt="Bonnd Perspective" class="prod-img reveal">
+      
+      <div class="reveal d1">
+        <span class="eyebrow">Our Perspective</span>
+        <h2 class="section-title">A Different View of the Problem</h2>
+        <p class="body-copy">Bonnd is built around one truth most men have never been told:</p>
+        <p class="bold-stmt">Desire is not a switch.<br>It's a result.</p>
+        <p class="body-copy">When the body is under prolonged stress, it systematically reduces everything non-essential to survival — and desire is near the top of that list. Restore the conditions underneath it, and desire returns without being forced. Chase it with stimulants while the conditions stay broken, and it never holds.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE APPROACH -->
+  <section class="section sec-white">
+    <div class="container c-sm">
+      <span class="eyebrow reveal">The Approach</span>
+      <h2 class="section-title reveal d1">What Bonnd Does and Does Not Do</h2>
+      <p class="body-copy reveal d2">Bonnd does not create spikes, manufacture arousal, or promise instant transformation. It does not shame men into buying or use urgency to pressure a decision.</p>
+      <p class="body-copy reveal d2" style="margin-top:16px;">What Bonnd does — specifically, deliberately, every day — is reduce the internal load suppressing drive, support the recovery pathways burnout disrupts, and create conditions that let desire, energy, and presence return on their own.</p>
+      <p class="body-copy reveal d3" style="margin-top:20px;"><strong>Quietly. Reliably. Over time.</strong></p>
+    </div>
+  </section>
+
+  <!-- THE BIGGER PICTURE -->
+  <section class="section sec-light">
+    <div class="container c-sm">
+      <span class="eyebrow reveal">The Bigger Picture</span>
+      <h2 class="section-title reveal d1">Why This Matters</h2>
+      <p class="body-copy reveal d2">Because millions of men are being told the wrong story. They're told low desire means low testosterone. They're sold boosters that treat the signal and ignore the cause. They're made to feel like the failure is theirs.</p>
+      <p class="body-copy reveal d2" style="margin-top:16px;">It isn't. The cause is burnout — a system pushed past recovery capacity for so long it's learned to function without drive. That's what Bonnd is designed to address. With honesty, with restraint, and with formulation that actually fits the problem.</p>
+    </div>
+  </section>
+
+  <!-- WHAT WE PROMISE -->
+  <section class="promise-dark">
+    <div class="container c-sm">
+      <h2 class="reveal">What We Promise — And What We Don't</h2>
+      <div class="promise-row reveal d1">
+        <span class="label label-yes">We promise</span>
+        <span class="promise-body">honest formulation, transparent support, and a full refund if it doesn't work.</span>
+      </div>
+      <div class="promise-row reveal d2">
+        <span class="label label-no">We don't promise</span>
+        <span class="promise-body">overnight transformation.</span>
+      </div>
+      <p class="promise-it reveal d3">That's it.</p>
+      <div style="margin-top:40px;" class="reveal d3">
+        <a href="{{ routes.all_products_collection_url }}" class="btn btn-white">See the Product</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const mt = document.querySelector('.marquee-track');
+  if(mt) {
+    const mw = mt.closest('.marquee-wrap');
+    mw.addEventListener('mouseenter', () => mt.style.animationPlayState='paused');
+    mw.addEventListener('mouseleave', () => mt.style.animationPlayState='running');
+  }
+
+  const els = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if(e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -36px 0px' });
+    els.forEach(el => io.observe(el));
+  } else {
+    els.forEach(el => el.classList.add('in'));
+  }
+});
+</script>
+
+{% schema %}
+{
+  "name": "Bonnd About Us",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Bonnd About Us",
+      "category": "Custom Content"
+    }
+  ]
+}
+{% endschema %}

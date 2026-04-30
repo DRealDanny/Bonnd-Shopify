@@ -1,0 +1,30 @@
+/* ============ ABOUT PAGE SPECIFIC ============ */
+.page-hero { background: var(--dark); padding-top: calc(var(--nav-h-desktop) + clamp(56px, 9vw, 110px)); padding-bottom: clamp(56px, 9vw, 110px); padding-inline: clamp(20px, 5vw, 80px); text-align: center; }
+.page-hero-title { font-size: clamp(30px, 5.5vw, 56px); font-weight: 800; line-height: 1.1; letter-spacing: -.03em; color: var(--white); margin-bottom: 20px; margin-top: 0; }
+.page-hero-body { font-size: clamp(14px, 1.8vw, 16px); color: rgba(255,255,255,.68); max-width: 580px; margin-inline: auto; line-height: 1.85; margin-bottom: 0; }
+
+/* Two-col content grid */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 80px); align-items: center; }
+.two-col.reverse { direction: rtl; }
+.two-col.reverse > * { direction: ltr; }
+
+/* Bold statement */
+.bold-stmt { font-size: clamp(16px, 2vw, 18px); font-weight: 700; color: var(--dark); line-height: 1.5; margin: 16px 0; }
+
+/* What We Promise */
+.promise-dark { background: var(--dark); padding-block: clamp(60px, 8vw, 100px); padding-inline: clamp(20px, 5vw, 80px); }
+.promise-dark h2 { color: var(--white); font-size: clamp(24px, 4vw, 40px); font-weight: 800; letter-spacing: -.025em; margin-bottom: 36px; margin-top: 0; }
+.promise-row { display: flex; align-items: baseline; gap: 8px; margin-bottom: 14px; font-size: clamp(14px, 1.6vw, 16px); line-height: 1.75; }
+.promise-row .label { font-weight: 700; white-space: nowrap; }
+.label-yes { color: var(--teal); }
+.label-no { color: var(--teal); }
+.promise-body { color: rgba(255,255,255,.75); }
+.promise-it { color: rgba(255,255,255,.5); font-style: italic; margin-top: 20px; font-size: clamp(13px, 1.5vw, 15px); }
+
+.btn-white { background: var(--white); color: var(--dark); border: 1.5px solid var(--white); }
+.btn-white:hover { background: transparent; color: var(--white); }
+
+@media(max-width: 900px) {
+  .two-col { grid-template-columns: 1fr; max-width: 580px; margin-inline: auto; }
+  .two-col.reverse { direction: ltr; }
+}

@@ -1,0 +1,143 @@
+{{ 'bonnd-contact.css' | asset_url | stylesheet_tag }}
+
+<div class="bonnd-contact-wrapper">
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <span class="eyebrow reveal">We're Here</span>
+    <h1 class="page-hero-title reveal d1">Reach Out To Us</h1>
+    <p class="page-hero-body reveal d2">If you have a question about Bonnd, your order, or whether this approach is right for you, you can reach us anytime. We aim to be clear, respectful, and pressure-free just like the rest of the brand.</p>
+  </section>
+
+  <!-- HOW TO REACH US + FORM -->
+  <section class="section sec-white">
+    <div class="container contact-body">
+      <h2 class="section-title reveal">How To Reach Us</h2>
+      <p class="body-copy reveal d1">
+        The best way to contact us is by email:
+        <a href="mailto:support@getbonnd.com" class="contact-email-link">support@getbonnd.com</a>
+      </p>
+      <p class="body-copy reveal d2" style="margin-top:10px;">Or fill the form below<br>We typically respond within 1 – 2 business days.</p>
+
+      <!-- RAW HTML FORM (Unwired) -->
+      <div class="contact-form reveal d2">
+        <div class="form-row">
+          <div class="form-field">
+            <input type="text" class="form-input" placeholder="Name" autocomplete="name"/>
+          </div>
+          <div class="form-field">
+            <input type="email" class="form-input" placeholder="Email" autocomplete="email"/>
+          </div>
+        </div>
+        <div class="form-row" style="grid-template-columns:1fr;">
+          <div class="form-field">
+            <input type="tel" class="form-input" placeholder="Phone" autocomplete="tel"/>
+          </div>
+        </div>
+        <div class="form-row" style="grid-template-columns:1fr;">
+          <div class="form-field">
+            <textarea class="form-textarea" placeholder="Comment"></textarea>
+          </div>
+        </div>
+        <div class="form-submit">
+          <button type="button" class="btn btn-teal" id="submitBtn">Submit</button>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- WHAT WE CAN HELP WITH -->
+  <section class="section sec-light">
+    <div class="container c-md">
+      <div class="help-grid">
+        <div class="help-img-wrap reveal">
+          <div class="help-illustration">
+            <svg width="110" height="110" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="55" cy="55" r="55" fill="none"/>
+              <rect x="28" y="30" width="46" height="52" rx="4" fill="#c5cdf7" opacity=".9"/>
+              <rect x="32" y="38" width="30" height="3" rx="1.5" fill="#8892e8"/>
+              <rect x="32" y="46" width="22" height="3" rx="1.5" fill="#8892e8" opacity=".6"/>
+              <rect x="32" y="54" width="26" height="3" rx="1.5" fill="#8892e8" opacity=".6"/>
+              <circle cx="72" cy="36" r="14" fill="#ffe08a"/>
+              <path d="M68 36c0-2.2 1.8-4 4-4s4 1.8 4 4c0 1.5-.8 2.8-2 3.5V42h-4v-2.5C68.8 38.8 68 37.5 68 36z" fill="#f5a623"/>
+              <rect x="70" y="42" width="4" height="2" rx="1" fill="#f5a623"/>
+              <rect x="50" y="68" width="6" height="20" rx="2" transform="rotate(-30 50 68)" fill="#ff8fab"/>
+              <polygon points="50,68 56,68 53,62" fill="#ff6b9d"/>
+            </svg>
+          </div>
+        </div>
+        <div class="reveal d1">
+          <h2 class="section-title">What we can help with</h2>
+          <p class="body-copy">You can reach out if you have questions about:</p>
+          <ul class="help-list" style="margin-top:16px;">
+            <li>how to use Bonnd</li>
+            <li>subscriptions, pauses, or cancellations</li>
+            <li>orders, shipping or billing</li>
+            <li>whether Bonnd is a good fit for you etc</li>
+          </ul>
+          <p class="body-copy" style="margin-top:20px;"><strong>If something isn't right, we'll address it directly.</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK NOTE -->
+  <section class="sec-dark quick-note">
+    <div class="container c-sm reveal">
+      <h2>A Quick Note</h2>
+      <p>Bonnd is designed to support consistency over time, not to create instant effects. If your question is about expectations, timing, or whether subtle progress is normal, you're not alone and <a href="/pages/faq">we're happy to clarify.</a></p>
+    </div>
+  </section>
+
+  <!-- STILL UNSURE -->
+  <section class="still-unsure sec-light tc">
+    <div class="container">
+      <h2 class="reveal">Still Unsure?</h2>
+      <p class="reveal d1">If you're deciding whether to try Bonnd and<br>have questions before ordering, feel free to reach out.<br>Clarity matters more than rushing a decision.</p>
+      <a href="#submitBtn" class="btn btn-dark reveal d2">Contact Us</a>
+    </div>
+  </section>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Dummy Form Submission Hook
+  const submitBtn = document.getElementById('submitBtn');
+  if (submitBtn) {
+    submitBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      // TODO: wire to backend / form handler
+      console.log('Form submission prevented - ready for custom wiring.');
+    });
+  }
+
+  // Reveal Animations
+  const els = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if(e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -36px 0px' });
+    els.forEach(el => io.observe(el));
+  } else {
+    els.forEach(el => el.classList.add('in'));
+  }
+});
+</script>
+
+{% schema %}
+{
+  "name": "Bonnd Contact",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Bonnd Contact",
+      "category": "Custom Content"
+    }
+  ]
+}
+{% endschema %}

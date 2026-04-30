@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "sales_content": {
+      "type": "bonnd-sales",
+      "settings": {}
+    }
+  },
+  "order": [
+    "sales_content"
+  ]
+}

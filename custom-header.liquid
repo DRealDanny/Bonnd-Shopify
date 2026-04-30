@@ -1,0 +1,47 @@
+<style>
+  /* ─── TWEAK YOUR LOGO SIZE HERE ─── */
+  .brand-logo {
+    width: 140px; /* Change this number to make desktop logo bigger/smaller */
+    height: auto;
+    object-fit: contain;
+  }
+  
+  @media(max-width: 768px) {
+    .brand-logo {
+      width: 110px; /* Change this number for mobile size */
+    }
+  }
+</style>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-wrap">
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    
+    <a href="{{ routes.root_url }}" class="nav-logo">
+      <img src="{{ 'bonnd-logo.png' | file_url }}" alt="Bonnd" class="brand-logo" />
+    </a>
+    
+    <ul class="nav-links">
+      <li><a href="{{ routes.root_url }}" class="nav-link {% if request.path == '/' %}active{% endif %}">Home</a></li>
+      <li><a href="/pages/product" class="nav-link {% if request.path contains 'product' %}active{% endif %}">Product</a></li>
+      <li><a href="/pages/about" class="nav-link {% if request.path contains 'about' %}active{% endif %}">About Us</a></li>
+      <li><a href="/pages/faq" class="nav-link {% if request.path contains 'faq' %}active{% endif %}">FAQ</a></li>
+      <li><a href="/pages/contact" class="nav-link {% if request.path contains 'contact' %}active{% endif %}">Contact</a></li>
+    </ul>
+    
+    <div class="nav-icons">
+      <a href="{{ routes.search_url }}" class="nav-icon-btn" aria-label="Search"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></a>
+      <a href="{{ routes.account_url }}" class="nav-icon-btn" aria-label="Account"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></a>
+      <a href="{{ routes.cart_url }}" class="nav-icon-btn" aria-label="Cart"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></a>
+    </div>
+  </div>
+</nav>
+
+{% schema %}
+{
+  "name": "Custom Header",
+  "settings": []
+}
+{% endschema %}

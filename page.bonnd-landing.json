@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "landing_content": {
+      "type": "bonnd-landing",
+      "settings": {}
+    }
+  },
+  "order": [
+    "landing_content"
+  ]
+}

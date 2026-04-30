@@ -1,0 +1,392 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700&display=swap');
+
+:root {
+  --dark:    #062E35;
+  --white:   #ffffff;
+  --off:     #f7f5f2;
+  --mid:     #555555;
+  --light:   #888888;
+  --border:  #e0ddd8;
+  --gold:    #b8860b;
+  --green:   #27ae60;
+  --blue:    #2471a3;
+  --font:    'Inter', sans-serif;
+}
+
+/* Force custom font override against Shopify's base.css */
+body, h1, h2, h3, p, span, a, input, button, div, li {
+  font-family: var(--font) !important;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: var(--font);
+  background: var(--white);
+  color: var(--dark);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+/* ── HERO ── */
+.hero {
+  background: var(--dark);
+  padding: 80px 40px 72px;
+  text-align: center;
+}
+.hero .pre-head {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #666;
+  margin-bottom: 28px;
+}
+.hero h1 {
+  font-size: clamp(28px, 5vw, 54px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  max-width: 760px;
+  margin: 0 auto 12px;
+}
+.hero h1 em {
+  font-style: normal;
+  color: var(--white);
+  font-weight: 700;
+}
+.hero .sub {
+  font-size: clamp(15px, 2vw, 18px);
+  color: #999;
+  max-width: 560px;
+  margin: 0 auto 48px;
+  line-height: 1.65;
+}
+
+/* CTA block */
+.cta-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.email-row {
+  display: flex;
+  gap: 0;
+  width: 100%;
+  max-width: 480px;
+}
+.email-row input {
+  flex: 1;
+  padding: 16px 20px;
+  font-size: 15px;
+  border: 1px solid #333;
+  background: #111;
+  color: #ddd;
+  outline: none;
+  font-family: var(--font);
+}
+.email-row input::placeholder { color: #666; }
+.email-row input:focus { border-color: #555; }
+.btn-submit {
+  padding: 16px 28px;
+  background: var(--white);
+  color: var(--dark);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity .2s;
+  font-family: var(--font);
+}
+.btn-submit:hover { opacity: .85; }
+.cta-subtext {
+  font-size: 12px;
+  color: var(--white);
+  letter-spacing: 0.04em;
+}
+
+/* ── SECTION BASE ── */
+section { padding: 80px 40px; }
+.sec-inner { max-width: 660px; margin: 0 auto; }
+.sec-inner.wide { max-width: 900px; }
+
+/* ── MIRROR SECTION ── */
+.mirror-sec { background: var(--white); }
+.mirror-sec .intro {
+  font-size: 17px;
+  color: var(--mid);
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+.signal-list {
+  list-style: none;
+  padding: 0;
+  border-top: 1px solid var(--border);
+  margin-bottom: 40px;
+}
+.signal-list li {
+  padding: 14px 0;
+  font-size: 17px;
+  color: var(--dark);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+.signal-list li::before {
+  content: "→";
+  color: var(--light);
+  flex-shrink: 0;
+  font-weight: 600;
+}
+.mirror-close {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--dark);
+  line-height: 1.5;
+  padding: 24px 28px;
+  border-left: 4px solid var(--dark);
+  background: var(--off);
+}
+
+/* ── MECHANISM SECTION ── */
+.mech-sec { background: var(--off); }
+.mech-sec h2 {
+  font-size: clamp(20px, 2.8vw, 26px);
+  font-weight: 700;
+  margin-bottom: 28px;
+  line-height: 1.2;
+}
+.mech-sec p {
+  font-size: 17px;
+  color: var(--mid);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+.callout {
+  background: var(--dark);
+  color: #ccc;
+  padding: 28px 32px;
+  margin: 36px 0;
+  font-size: 17px;
+  line-height: 1.7;
+}
+.callout strong { color: var(--white); font-weight: 600; }
+
+/* ── WHAT YOU GET ── */
+.get-sec { background: var(--white); }
+.get-sec h2 {
+  font-size: clamp(20px, 2.8vw, 26px);
+  font-weight: 700;
+  margin-bottom: 36px;
+  line-height: 1.2;
+}
+.get-list {
+  list-style: none;
+  padding: 0;
+  border-top: 1px solid var(--border);
+  margin-bottom: 40px;
+}
+.get-list li {
+  padding: 16px 0;
+  font-size: 16px;
+  color: var(--mid);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  line-height: 1.5;
+}
+.get-list li .num {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--light);
+  letter-spacing: 0.08em;
+  flex-shrink: 0;
+  min-width: 28px;
+  margin-top: 2px;
+}
+
+/* ── FOR / NOT FOR ── */
+.qualify-sec { background: var(--off); }
+.qualify-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+.q-col {
+  background: var(--white);
+  padding: 40px 36px;
+}
+.q-col h3 {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.q-col.yes h3 { color: var(--green); }
+.q-col.no  h3 { color: var(--light); }
+.q-col ul { list-style: none; padding: 0; }
+.q-col ul li {
+  font-size: 15px;
+  color: var(--mid);
+  padding: 10px 0;
+  border-bottom: 1px solid #f0ede8;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.4;
+}
+.q-col ul li:last-child { border-bottom: none; }
+.q-col.yes ul li::before { content: "✓"; color: var(--green); font-weight: 700; flex-shrink: 0; }
+.q-col.no  ul li::before { content: "✗"; color: #ccc; font-weight: 700; flex-shrink: 0; }
+
+/* ── CLOSE + FINAL CTA ── */
+.close-sec {
+  background: var(--dark);
+  padding: 80px 40px;
+  text-align: center;
+}
+.close-sec p {
+  font-size: 17px;
+  color: var(--white);
+  max-width: 560px;
+  margin: 0 auto 16px;
+  line-height: 1.8;
+}
+.close-quote {
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 600;
+  color: var(--white);
+  max-width: 580px;
+  margin: 0 auto 48px;
+  line-height: 1.35;
+}
+.close-cta-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.close-email-row {
+  display: flex;
+  gap: 0;
+  width: 100%;
+  max-width: 480px;
+}
+.close-email-row input {
+  flex: 1;
+  padding: 16px 20px;
+  font-size: 15px;
+  border: 1px solid #333;
+  background: #111;
+  color: #ddd;
+  outline: none;
+  font-family: var(--font);
+}
+.close-email-row input::placeholder { color: #666; }
+.close-email-row .btn-submit {
+  padding: 16px 28px;
+  background: var(--white);
+  color: var(--dark);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font);
+}
+.close-subtext { font-size: 12px; color: var(--white); letter-spacing: 0.04em; }
+
+/* ── DISCLAIMER ── */
+.disclaimer {
+  padding: 28px 40px;
+  text-align: center;
+  font-size: 11px;
+  color: var(--light);
+  line-height: 1.7;
+  background: var(--off);
+  border-top: 1px solid var(--border);
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--dark);
+  border-top: 1px solid #2a2a3e;
+  padding: 32px 40px;
+  text-align: center;
+}
+footer p { font-size: 12px; color: var(--white); letter-spacing: 0.08em; text-transform: uppercase; }
+
+.cta-timer {
+  color: #00B2DA !important;
+  margin-bottom: 40px;
+  font-weight: 600; /* Adding a little weight so the color really shows up */
+}
+
+@media (max-width: 768px) {
+  /* Layout adjustments */
+  .hero { padding: 60px 20px 56px; }
+  section { padding: 60px 20px; }
+  .email-row, .close-email-row { flex-direction: column; }
+  .email-row input, .close-email-row input { border-right: 1px solid #333; }
+  .btn-submit, .close-email-row .btn-submit { width: 100%; padding: 16px; }
+  .qualify-grid { grid-template-columns: 1fr; }
+  .close-sec { padding: 60px 20px; }
+  .disclaimer { padding: 24px 20px; }
+  footer { padding: 24px 20px; }
+
+  /* ── MOBILE FONT SIZE CONTROLS ── */
+  
+  /* General body text */
+  body, .get-list li, .q-col ul li { 
+    font-size: 13px !important; 
+  }
+  
+  /* Main Hero Heading */
+  .hero h1 { 
+    font-size: 25px !important; 
+    line-height: 1.2;
+  }
+  
+  /* Hero Sub-text */
+  .hero .sub { 
+    font-size: 14px !important; 
+  }
+  
+  /* Section Headings (h2) */
+  .mech-sec h2, .get-sec h2, .qualify-sec h2 { 
+    font-size: 22px !important; 
+  }
+  
+  /* Section Paragraphs & Lists */
+  .mirror-sec .intro, .signal-list li, .mech-sec p, .callout { 
+    font-size: 15px !important; 
+  }
+  
+  /* The Bottom Quote */
+  .close-quote { 
+    font-size: 20px !important; 
+  }
+}
+
+/* The Sidebar Callout (Mirror Section Close) */
+  .mirror-close { 
+    font-size: 15px !important; 
+    padding: 16px 20px !important; /* Reduces the padding so it's not as bulky */
+  }
+
+  .cta-timer {
+ font-size: 15px !important;
+}

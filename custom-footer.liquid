@@ -1,0 +1,53 @@
+<footer class="site-footer">
+  <div class="footer-inner">
+    
+    <div class="footer-top">
+      
+      <div class="footer-col">
+        <h4 class="footer-heading">Terms & Policies</h4>
+        <div class="footer-links">
+          <a href="/pages/privacy-policy">Privacy Policy</a>
+          <a href="/pages/refund-policy">Refund Policy</a>
+          <a href="/pages/terms-and-condition">Terms and Condition</a>
+          <a href="/pages/disclaimer">Disclaimer</a>
+        </div>
+      </div>
+      
+      <div class="footer-col">
+        <h4 class="footer-heading">Connect With Us</h4>
+        <div class="footer-links">
+          <!-- Instagram: Using custom.instagram_url -->
+          <a href="{{ shop.metafields.custom.instagram_url.value | default: '#' }}" class="soc-link" target="_blank">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            Instagram
+          </a>
+
+          <!-- X (Twitter): Using custom.x_url -->
+          <a href="{{ shop.metafields.custom.x_url.value | default: '#' }}" class="soc-link" target="_blank">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.259 5.632L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+            X (Twitter)
+          </a>
+
+          <!-- Email: Using custom.support_email -->
+          <a href="mailto:{{ shop.metafields.custom.support_email.value | default: 'hello@getbonnd.com' }}" class="soc-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Email Us
+          </a>
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">© {{ 'now' | date: "%Y" }} Bonnd. All rights reserved.</p>
+    </div>
+    
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Custom Footer",
+  "settings": []
+}
+{% endschema %}

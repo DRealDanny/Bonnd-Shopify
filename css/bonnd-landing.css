@@ -29,8 +29,9 @@ body {
 
 /* ── HERO ── */
 .hero {
+  display: block !important;
   background: var(--dark);
-  padding: 80px 40px 72px;
+  padding: 150px 40px 72px;
   text-align: center;
 }
 .hero .pre-head {
@@ -336,18 +337,50 @@ footer p { font-size: 12px; color: var(--white); letter-spacing: 0.08em; text-tr
 }
 
 @media (max-width: 768px) {
-  /* Layout adjustments */
-  .hero { padding: 60px 20px 56px; }
-  section { padding: 60px 20px; }
-  .email-row, .close-email-row { flex-direction: column; }
-  .email-row input, .close-email-row input { border-right: 1px solid #333; }
-  .btn-submit, .close-email-row .btn-submit { width: 100%; padding: 16px; }
-  .qualify-grid { grid-template-columns: 1fr; }
-  .close-sec { padding: 60px 20px; }
-  .disclaimer { padding: 24px 20px; }
-  footer { padding: 24px 20px; }
+  /* ── 1. LAYOUT & GAP CORRECTIONS ── */
+  
+  /* Tightening the hero padding to remove the large gap */
+  .hero { 
+    padding: 80px 20px 80px !important; 
+    min-height: auto !important; /* Forces hero to wrap content instead of 100vh */
+  }
 
-  /* ── MOBILE FONT SIZE CONTROLS ── */
+  /* Reducing section padding so they flow better on small screens */
+  section { 
+    padding: 60px 20px !important; 
+  }
+
+  .email-row, .close-email-row { 
+    flex-direction: column; 
+  }
+
+  .email-row input, .close-email-row input { 
+    border-right: 1px solid #333; 
+    border-bottom: none; /* Prevents double borders on stack */
+  }
+
+  .btn-submit, .close-email-row .btn-submit { 
+    width: 100%; 
+    padding: 16px; 
+  }
+
+  .qualify-grid { 
+    grid-template-columns: 1fr; 
+  }
+
+  .close-sec { 
+    padding: 40px 20px !important; 
+  }
+
+  .disclaimer { 
+    padding: 24px 20px; 
+  }
+
+  footer { 
+    padding: 24px 20px; 
+  }
+
+  /* ── 2. YOUR FONT SIZE CONTROLS (UNTOUCHED) ── */
   
   /* General body text */
   body, .get-list li, .q-col ul li { 
@@ -379,14 +412,14 @@ footer p { font-size: 12px; color: var(--white); letter-spacing: 0.08em; text-tr
   .close-quote { 
     font-size: 20px !important; 
   }
-}
 
-/* The Sidebar Callout (Mirror Section Close) */
+  /* The Sidebar Callout (Mirror Section Close) */
   .mirror-close { 
     font-size: 15px !important; 
-    padding: 16px 20px !important; /* Reduces the padding so it's not as bulky */
+    padding: 16px 20px !important; 
   }
 
   .cta-timer {
- font-size: 15px !important;
+    font-size: 15px !important;
+  }
 }

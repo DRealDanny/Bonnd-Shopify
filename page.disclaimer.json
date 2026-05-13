@@ -1,0 +1,12 @@
+{
+  "name": "Disclaimer",
+  "sections": {
+    "main": {
+      "type": "main-disclaimer",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

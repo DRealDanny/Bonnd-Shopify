@@ -1,0 +1,54 @@
+{{ 'refund-policy.css' | asset_url | stylesheet_tag }}
+
+<section class="page-hero">
+  <span class="hero-eyebrow reveal">Terms and Policies</span>
+  <h1 class="page-hero-title reveal d1">Refund Policy</h1>
+</section>
+
+<section class="policy-body">
+  <div class="container c-policy">
+
+    <div class="policy-block reveal">
+      <p class="policy-block-body">Bonnd is designed to work quietly over time, not to create instant sensations. Because of this, we encourage customers to use Bonnd consistently and as directed before deciding whether it's right for them.</p>
+    </div>
+
+    <div class="policy-block reveal">
+      <p class="policy-block-title">Refund eligibility</p>
+      <p class="policy-block-body">If after giving Bonnd a fair, consistent try you feel it isn't a fit, you may request a refund within our refund window.</p>
+    </div>
+
+    <div class="policy-block reveal">
+      <p class="policy-block-body">To request a refund, contact <a href="mailto:support@getbonnd.com">support@getbonnd.com</a>, include your order number, and briefly explain your experience (optional, but helpful). Refunds are processed back to the original payment method.</p>
+    </div>
+
+    <div class="policy-block reveal">
+      <p class="policy-block-title">Our approach</p>
+      <p class="policy-block-body">We don't believe in forcing outcomes or making refunds difficult. Our goal is to be fair, reasonable, and respectful.</p>
+    </div>
+
+  </div>
+</section>
+
+<script>
+(function(){
+  'use strict';
+  const els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.08,rootMargin:'0px 0px -30px 0px'});
+    els.forEach(el=>io.observe(el));
+  }else{els.forEach(el=>el.classList.add('in'));}
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Refund Policy",
+  "tag": "section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Refund Policy"
+    }
+  ]
+}
+{% endschema %}

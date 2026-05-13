@@ -1,0 +1,73 @@
+{{ 'terms-and-condition.css' | asset_url | stylesheet_tag }}
+
+<section class="page-hero">
+  <span class="hero-eyebrow reveal">Terms and Policies</span>
+  <h1 class="page-hero-title reveal d1">Terms and Condition</h1>
+</section>
+
+<section class="policy-body">
+  <div class="container c-policy">
+
+    <p class="policy-lead reveal">By using getbonnd.com, you agree to the following terms and conditions. Please read them carefully.</p>
+
+    <div class="policy-block reveal">
+      <p class="policy-block-title">Use of the site</p>
+      <p class="policy-block-body">You agree to use this site for lawful purposes only and not to engage in activities that could harm the site, the brand, or other users.</p>
+    </div>
+
+    <div class="policy-block reveal">
+      <p class="policy-block-title">Products and information</p>
+      <p class="policy-block-body">Bonnd products are intended for general wellness support. Information on this site is provided for educational purposes only and should not be considered medical advice.</p>
+    </div>
+
+    <div class="policy-block reveal">
+      <p class="policy-block-title">Orders and payments</p>
+      <p class="policy-block-body">All prices are listed in the applicable currency at checkout. We reserve the right to refuse or cancel orders at our discretion, including in cases of suspected fraud or misuse.</p>
+    </div>
+
+    <div class="policy-block reveal">
+      <p class="policy-block-title">Subscriptions</p>
+      <p class="policy-block-body">If you purchase a subscription, you authorize recurring charges at the selected interval. Subscriptions can be paused or canceled at any time. Changes must be made before the next billing cycle to take effect.</p>
+    </div>
+
+    <div class="policy-block reveal">
+      <p class="policy-block-title">Intellectual property</p>
+      <p class="policy-block-body">All content on this site, including text, graphics, logos, and images, is the property of Bonnd and may not be copied or used without permission.</p>
+    </div>
+
+    <div class="policy-block reveal">
+      <p class="policy-block-title">Limitation of liability</p>
+      <p class="policy-block-body">To the extent permitted by law, Bonnd is not liable for indirect or consequential damages related to the use of our products or website.</p>
+    </div>
+
+    <div class="policy-block reveal">
+      <p class="policy-block-title">Changes to terms</p>
+      <p class="policy-block-body">We may update these Terms & Conditions at any time. Continued use of the site indicates acceptance of updated terms.</p>
+    </div>
+
+  </div>
+</section>
+
+<script>
+(function(){
+  'use strict';
+  const els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.08,rootMargin:'0px 0px -30px 0px'});
+    els.forEach(el=>io.observe(el));
+  }else{els.forEach(el=>el.classList.add('in'));}
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Terms and Condition",
+  "tag": "section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Terms and Condition"
+    }
+  ]
+}
+{% endschema %}

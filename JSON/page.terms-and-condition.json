@@ -1,0 +1,12 @@
+{
+  "name": "Terms and Condition",
+  "sections": {
+    "main": {
+      "type": "main-terms-and-condition",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
